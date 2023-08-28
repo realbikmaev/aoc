@@ -1,5 +1,17 @@
 use std::{fs, path::Path};
 
+pub fn input_range(day: i64) -> std::ops::Range<i64> {
+    let input = read_input(day);
+    let mut input = input.split_ascii_whitespace();
+    if let Some(range) = input.next() {
+        let mut range = range.split("-");
+        let start = range.next().unwrap().parse::<i64>().unwrap();
+        let end = range.next().unwrap().parse::<i64>().unwrap();
+        return start..end;
+    }
+    unreachable!()
+}
+
 pub fn input_paths(day: i64) -> (Vec<String>, Vec<String>) {
     let paths: Vec<Vec<String>> = read_input(day)
         .lines()
