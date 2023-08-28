@@ -1,4 +1,4 @@
-use crate::utils::input_comma_ints;
+use crate::utils::*;
 
 #[derive(Default, Debug, Clone)]
 struct Computer {

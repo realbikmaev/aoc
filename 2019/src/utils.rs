@@ -1,5 +1,13 @@
 use std::{fs, path::Path};
 
+pub fn input_paths(day: i64) -> (Vec<String>, Vec<String>) {
+    let paths: Vec<Vec<String>> = read_input(day)
+        .lines()
+        .map(|line| line.split(",").map(|x| x.to_string()).collect())
+        .collect();
+    (paths[0].clone(), paths[1].clone())
+}
+
 pub fn input_newline_ints(day: i64) -> Vec<i64> {
     read_input(day)
         .lines()

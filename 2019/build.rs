@@ -1,9 +1,11 @@
+use dotenvy;
 use reqwest::blocking::Client;
 use std::env;
 use std::fs;
 use std::path::Path;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    dotenvy::dotenv()?;
     let session = env::var("SESSION").expect("SESSION environment variable not set");
     let client = Client::builder()
         .danger_accept_invalid_certs(true)

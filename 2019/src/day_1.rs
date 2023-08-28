@@ -1,4 +1,4 @@
-use crate::utils::input_newline_ints;
+use crate::utils::*;
 
 pub fn part_one() -> i64 {
     input_newline_ints(1).into_iter().map(|x| x / 3 - 2).sum()
